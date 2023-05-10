@@ -1,7 +1,8 @@
 import './Expenses.css';
 
-import { Expense } from '../models/expenses';
+import { Expense } from '../../models/expenses';
 import ExpenseItem from './ExpenseItem';
+import Card from '../UI/Card';
 
 
 type Props = {
@@ -9,11 +10,11 @@ type Props = {
 }
 
 const Expenses = ({expenses}: Props) => {
-    
+
     return (
-        <div className="expenses">
+        <Card className="expenses">
         {expenses.map((item) => <ExpenseItem expense={item}/>)}
-        </div>
+        </Card>
     );
 };
 
