@@ -2,10 +2,11 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import './ExpenseForm.css';
 
 type Props = {
+    onCancel: () => void;
     onSubmit: ({title, amount, date} : 
         {title:string, amount: number, date: Date}) => void;
 }
-const ExpenseForm = ({onSubmit}: Props) => {
+const ExpenseForm = ({onSubmit, onCancel}: Props) => {
 
     const[enteredTitle, setEnteredTitle] = useState("");
     const[enteredAmount, setEnteredAmount] = useState("");
@@ -63,6 +64,7 @@ const ExpenseForm = ({onSubmit}: Props) => {
                 </div>
             </div>
             <div className="new-expense__actions">
+                <button onClick={onCancel}>Cancel</button>
                 <button type='submit'>Add Expense</button>
             </div>
         </form>

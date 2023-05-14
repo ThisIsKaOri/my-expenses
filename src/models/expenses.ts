@@ -6,7 +6,7 @@ export type Expense = {
     date:   Date;
 }; 
 
-export const expenses = [
+export const expenses: Expense[] = [
     {
         id: 'e1',
         title: 'Toilet Paper',
